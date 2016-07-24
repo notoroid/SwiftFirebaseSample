@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftFirebaseSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9C-lI-8wL">
+                                <rect key="frame" x="263" y="225" width="75" height="30"/>
+                                <state key="normal" title="招待を作成"/>
+                                <connections>
+                                    <segue destination="947-wS-uRn" kind="presentation" identifier="QRCodeSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="2DV-MC-t2d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hN-Bm-Lgs">
+                                <rect key="frame" x="270" y="280" width="60" height="30"/>
+                                <state key="normal" title="読み込み"/>
+                                <connections>
+                                    <segue destination="Hw0-K4-Nmn" kind="presentation" identifier="ReaderSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="MEn-O3-CHA"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wjp-Cp-tqT">
+                                <rect key="frame" x="20" y="109" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="onRemoteChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="gsU-Jv-weo"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="NKD-pm-hho"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SFa-x8-w7D">
+                                <rect key="frame" x="20" y="37" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="onOwnerChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="xTe-cU-J6F"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1Zg-Ml-ewA"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0hN-Bm-Lgs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4YX-Ca-Hx9"/>
+                            <constraint firstItem="SFa-x8-w7D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8mZ-Yw-73V"/>
+                            <constraint firstItem="Wjp-Cp-tqT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DV1-im-9Mj"/>
+                            <constraint firstItem="SFa-x8-w7D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EuE-fY-H59"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SFa-x8-w7D" secondAttribute="trailing" id="H9b-zB-Kmp"/>
+                            <constraint firstItem="Wjp-Cp-tqT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-176" id="J82-bj-TOb"/>
+                            <constraint firstItem="j9C-lI-8wL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QFO-kU-ZfA"/>
+                            <constraint firstItem="j9C-lI-8wL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-60" id="lEI-h8-dSg"/>
+                            <constraint firstItem="Wjp-Cp-tqT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lVc-Ab-Z4q"/>
+                            <constraint firstItem="SFa-x8-w7D" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-248" id="rET-hf-CA2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wjp-Cp-tqT" secondAttribute="trailing" id="tqp-1g-aCz"/>
+                            <constraint firstItem="0hN-Bm-Lgs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-5" id="xHg-yi-EJg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ownerTextField" destination="SFa-x8-w7D" id="xDJ-ej-nah"/>
+                        <outlet property="remoteTextField" destination="Wjp-Cp-tqT" id="nRY-JA-lhZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="443" y="389"/>
+        </scene>
+        <!--Code View Controller-->
+        <scene sceneID="O8m-Pu-eSc">
+            <objects>
+                <viewController id="947-wS-uRn" customClass="QRCodeViewController" customModule="SwiftFirebaseSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Ce-ws-PwA"/>
+                        <viewControllerLayoutGuide type="bottom" id="AFe-EX-vc1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ane-fN-WDo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qAa-sx-nrB">
+                                <rect key="frame" x="20" y="20" width="560" height="560"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bWo-Cl-oNZ">
+                                        <rect key="frame" x="30" y="30" width="500" height="500"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="bWo-Cl-oNZ" secondAttribute="centerY" id="Dn7-ez-hx0"/>
+                                    <constraint firstAttribute="bottom" secondItem="bWo-Cl-oNZ" secondAttribute="bottom" constant="30" id="Ez9-gw-aiO"/>
+                                    <constraint firstAttribute="trailing" secondItem="bWo-Cl-oNZ" secondAttribute="trailing" constant="30" id="KQ1-SU-M53"/>
+                                    <constraint firstItem="bWo-Cl-oNZ" firstAttribute="top" secondItem="qAa-sx-nrB" secondAttribute="top" constant="30" id="McW-s1-nOA"/>
+                                    <constraint firstItem="bWo-Cl-oNZ" firstAttribute="leading" secondItem="qAa-sx-nrB" secondAttribute="leading" constant="30" id="Rj8-Mi-wqn"/>
+                                    <constraint firstAttribute="width" secondItem="qAa-sx-nrB" secondAttribute="height" multiplier="1:1" id="TWA-e9-QFe"/>
+                                    <constraint firstAttribute="centerX" secondItem="bWo-Cl-oNZ" secondAttribute="centerX" id="rLo-M2-lDh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="qAa-sx-nrB" firstAttribute="centerY" secondItem="ane-fN-WDo" secondAttribute="centerY" id="JBe-2C-Da6"/>
+                            <constraint firstItem="qAa-sx-nrB" firstAttribute="leading" secondItem="ane-fN-WDo" secondAttribute="leadingMargin" id="STP-WR-AhK"/>
+                            <constraint firstItem="qAa-sx-nrB" firstAttribute="width" secondItem="qAa-sx-nrB" secondAttribute="height" multiplier="1:1" id="SeZ-g7-Efk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qAa-sx-nrB" secondAttribute="trailing" id="Tud-ti-aVX"/>
+                            <constraint firstItem="qAa-sx-nrB" firstAttribute="centerX" secondItem="ane-fN-WDo" secondAttribute="centerX" id="ugt-iY-Z8z"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="GOw-h0-LF5" appends="YES" id="sLC-Zf-73V"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="QRCodeView" destination="bWo-Cl-oNZ" id="chS-d2-DsM"/>
+                        <segue destination="bZr-Hg-IQQ" kind="unwind" identifier="returnToRootSegue" unwindAction="unwindFromQRCode:" id="uSo-RI-nec"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R2m-Gy-e5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bZr-Hg-IQQ" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="GOw-h0-LF5">
+                    <connections>
+                        <segue destination="bZr-Hg-IQQ" kind="unwind" unwindAction="unwindFromQRCode:" id="Adc-Bk-ER6"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1193" y="389"/>
+        </scene>
+        <!--Code Reader View Controller-->
+        <scene sceneID="A4D-zV-GWF">
+            <objects>
+                <viewController id="Hw0-K4-Nmn" customClass="QRCodeReaderViewController" customModule="SwiftFirebaseSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LNa-qX-6pd"/>
+                        <viewControllerLayoutGuide type="bottom" id="egC-oC-ufs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="slM-zo-xpD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyh-Pf-Gk6">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VV7-cw-6QT">
+                                <rect key="frame" x="20" y="552" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="fRj-nK-Wz2" kind="unwind" identifier="" unwindAction="unwindFromReader:" id="his-Xn-FbA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xyh-Pf-Gk6" firstAttribute="top" secondItem="slM-zo-xpD" secondAttribute="top" id="6We-h8-hmh"/>
+                            <constraint firstItem="Xyh-Pf-Gk6" firstAttribute="leading" secondItem="slM-zo-xpD" secondAttribute="leading" id="TGP-ay-xbu"/>
+                            <constraint firstItem="egC-oC-ufs" firstAttribute="top" secondItem="Xyh-Pf-Gk6" secondAttribute="bottom" id="jJl-LA-eKv"/>
+                            <constraint firstAttribute="trailing" secondItem="Xyh-Pf-Gk6" secondAttribute="trailing" id="qIn-64-95d"/>
+                            <constraint firstItem="VV7-cw-6QT" firstAttribute="leading" secondItem="slM-zo-xpD" secondAttribute="leadingMargin" id="qRo-Li-q8K"/>
+                            <constraint firstItem="egC-oC-ufs" firstAttribute="top" secondItem="VV7-cw-6QT" secondAttribute="bottom" constant="18" id="tzj-57-uJf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="Xyh-Pf-Gk6" id="gqq-PF-xH6"/>
+                        <segue destination="fRj-nK-Wz2" kind="unwind" identifier="returnToRootSegue2" unwindAction="unwindFromReader:" id="xWS-9q-Osi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wr4-f8-lSL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fRj-nK-Wz2" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="796" y="1177"/>
+        </scene>
+    </scenes>
+</document>
