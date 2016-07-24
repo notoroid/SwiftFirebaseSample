@@ -32,6 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
+        let googleServiceInfoFile = NSBundle.mainBundle().URLForResource("GoogleService-Info", withExtension: "plist")
+        assert(googleServiceInfoFile != nil, "not exist GoogleService-Info.plist")
+        
         rootRef = FIRDatabase.database().reference()
 
         textFieldRef = rootRef?.child(deviceKeyName).child(UUID).child(textFieldKeyName)
